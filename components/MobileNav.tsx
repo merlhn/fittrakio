@@ -57,16 +57,20 @@ export default function MobileNav({ currentPath, onLogout }: MobileNavProps) {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-[60]"
-          onClick={() => setIsOpen(false)}
-        />
+        <>
+          <div
+            className="lg:hidden fixed inset-0 bg-black/50 z-[100]"
+            onClick={() => setIsOpen(false)}
+          />
+          {/* Prevent interaction with content behind menu */}
+          <div className="lg:hidden fixed inset-0 z-[105] pointer-events-none" />
+        </>
       )}
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-full w-64 bg-white border-l border-border z-[70] transform transition-transform duration-300 ease-in-out shadow-2xl ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`lg:hidden fixed top-0 left-0 h-full w-64 bg-white border-r border-border z-[110] transform transition-transform duration-300 ease-in-out shadow-2xl ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="p-6 h-full overflow-y-auto">
