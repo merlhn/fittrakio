@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Logo from '@/components/Logo'
 import { START_DATE, END_DATE } from '@/utils/constants'
-import { HiChartBar, HiUsers, HiTrophy } from 'react-icons/hi'
+import { TrackProgressIcon, TeamAccountabilityIcon, MonthlyRewardsIcon } from '@/components/FeatureIcons'
 
 export default async function Home() {
   const cookieStore = await cookies()
@@ -80,7 +80,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
             <div className="bg-white border-2 border-border rounded-xl p-8 sm:p-10 vercel-card hover:border-black transition-all duration-300 shadow-md hover:shadow-xl">
               <div className="mb-6 flex justify-center">
-                <HiChartBar className="w-16 h-16 text-black" />
+                <TrackProgressIcon />
               </div>
               <h3 className="text-2xl font-semibold mb-4 vercel-heading">Track Progress</h3>
               <p className="text-muted text-base leading-relaxed">
@@ -89,7 +89,7 @@ export default async function Home() {
             </div>
             <div className="bg-white border-2 border-border rounded-xl p-8 sm:p-10 vercel-card hover:border-black transition-all duration-300 shadow-md hover:shadow-xl">
               <div className="mb-6 flex justify-center">
-                <HiUsers className="w-16 h-16 text-black" />
+                <TeamAccountabilityIcon />
               </div>
               <h3 className="text-2xl font-semibold mb-4 vercel-heading">Team Accountability</h3>
               <p className="text-muted text-base leading-relaxed">
@@ -98,7 +98,7 @@ export default async function Home() {
             </div>
             <div className="bg-white border-2 border-border rounded-xl p-8 sm:p-10 vercel-card hover:border-black transition-all duration-300 shadow-md hover:shadow-xl">
               <div className="mb-6 flex justify-center">
-                <HiTrophy className="w-16 h-16 text-black" />
+                <MonthlyRewardsIcon />
               </div>
               <h3 className="text-2xl font-semibold mb-4 vercel-heading">Monthly Rewards</h3>
               <p className="text-muted text-base leading-relaxed">
