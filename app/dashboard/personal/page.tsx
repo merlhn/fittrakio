@@ -89,12 +89,19 @@ export default function PersonalPage() {
   }
 
   const handleWorkoutToggle = (date: Date, completed: boolean) => {
-    if (!currentUser) return
+    if (!currentUser) {
+      console.log('No current user')
+      return
+    }
 
+    console.log('handleWorkoutToggle called:', { date, completed })
+    
     // Show confirmation modal for both check and uncheck
     setPendingDate(date)
     setPendingCompleted(completed)
     setShowConfirmModal(true)
+    
+    console.log('Modal should be shown now')
   }
 
   const confirmWorkout = async () => {
@@ -387,6 +394,7 @@ export default function PersonalPage() {
                       type="checkbox"
                       checked={displayChecked}
                       onChange={(e) => {
+                        console.log('Checkbox onChange triggered:', { dateKey, checked: e.target.checked })
                         handleWorkoutToggle(day, e.target.checked)
                       }}
                       className="w-5 h-5 border border-current rounded cursor-pointer accent-current"
