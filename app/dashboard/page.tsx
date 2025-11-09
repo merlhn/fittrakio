@@ -286,7 +286,7 @@ export default function DashboardPage() {
       </header>
 
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 py-4 sm:py-6 lg:py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center lg:justify-items-stretch">
           {/* Left: Workout Tracking Calendar */}
           <div className="lg:col-span-1">
             <div className="bg-white border border-border rounded-lg p-4 sm:p-6 vercel-card">
@@ -299,7 +299,7 @@ export default function DashboardPage() {
                       <th className="text-left px-1 py-2 font-semibold">Days</th>
                       <th className="text-left px-1 py-2 font-semibold">Date</th>
                       {sortedUsers.map(user => (
-                        <th key={user.id} className="text-center p-2 font-semibold text-center">
+                        <th key={user.id} className="text-center p-1 font-semibold text-center">
                           {user.name.split(' ')[0]}
                         </th>
                       ))}
@@ -352,7 +352,7 @@ export default function DashboardPage() {
                             {sortedUsers.map(user => {
                               const isChecked = workoutsMap[user.id]?.[dateKey] === true
                               return (
-                                <td key={user.id} className="p-2 text-center">
+                                <td key={user.id} className="p-1 text-center">
                                   {isChecked ? (
                                     <div className="w-4 h-4 mx-auto border border-foreground bg-white rounded flex items-center justify-center">
                                       <span className="text-foreground font-semibold text-xs leading-none">×</span>
@@ -373,7 +373,7 @@ export default function DashboardPage() {
                               <td colSpan={3} className="px-1 py-2 font-semibold text-center">
                                 {monthlyWinner.month}/{monthlyWinner.year} Winner: {monthlyWinner.winner.split(' ')[0]} 🏆
                               </td>
-                              <td colSpan={sortedUsers.length} className="p-2"></td>
+                              <td colSpan={sortedUsers.length} className="p-1"></td>
                             </tr>
                           )
                         }
@@ -407,31 +407,31 @@ export default function DashboardPage() {
                 <table className="w-full text-[10px] sm:text-xs min-w-[400px]">
                   <thead className="sticky top-0 bg-white">
                     <tr className="border-b border-border">
-                      <th className="text-left p-2 font-semibold">Weeks</th>
-                      <th className="text-center p-2 font-semibold">Threshold</th>
-                      <th className="text-center p-2 font-semibold">O. Debt</th>
-                      <th className="text-center p-2 font-semibold">E. Debt</th>
-                      <th className="text-center p-2 font-semibold">B. Debt</th>
-                      <th className="text-center p-2 font-semibold">Total</th>
+                      <th className="text-left p-1 font-semibold">Weeks</th>
+                      <th className="text-center p-1 font-semibold">Threshold</th>
+                      <th className="text-center p-1 font-semibold">O. Debt</th>
+                      <th className="text-center p-1 font-semibold">E. Debt</th>
+                      <th className="text-center p-1 font-semibold">B. Debt</th>
+                      <th className="text-center p-1 font-semibold">Total</th>
                     </tr>
                   </thead>
                   <tbody>
                     {weeklyDebts.map(debt => (
                       <tr key={debt.week} className="border-b border-border hover:bg-vercel-gray/50">
-                        <td className="p-2 font-medium text-center">{debt.week}</td>
-                        <td className="p-2 font-medium text-center">{WEEKLY_MINIMUM_WORKOUTS}</td>
-                        <td className="p-2 font-medium text-center">€{debt.omerDebt.toFixed(2)}</td>
-                        <td className="p-2 font-medium text-center">€{debt.egemenDebt.toFixed(2)}</td>
-                        <td className="p-2 font-medium text-center">€{debt.bayramDebt.toFixed(2)}</td>
-                        <td className="p-2 font-semibold text-center">€{debt.total.toFixed(2)}</td>
+                        <td className="p-1 font-medium text-center">{debt.week}</td>
+                        <td className="p-1 font-medium text-center">{WEEKLY_MINIMUM_WORKOUTS}</td>
+                        <td className="p-1 font-medium text-center">€{debt.omerDebt.toFixed(2)}</td>
+                        <td className="p-1 font-medium text-center">€{debt.egemenDebt.toFixed(2)}</td>
+                        <td className="p-1 font-medium text-center">€{debt.bayramDebt.toFixed(2)}</td>
+                        <td className="p-1 font-semibold text-center">€{debt.total.toFixed(2)}</td>
                       </tr>
                     ))}
                     <tr className="border-t border-border font-semibold bg-vercel-gray">
-                      <td colSpan={2} className="p-2 text-center">Total</td>
-                      <td className="p-2 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.omerDebt, 0).toFixed(2)}</td>
-                      <td className="p-2 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.egemenDebt, 0).toFixed(2)}</td>
-                      <td className="p-2 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.bayramDebt, 0).toFixed(2)}</td>
-                      <td className="p-2 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.total, 0).toFixed(2)}</td>
+                      <td colSpan={2} className="p-1 text-center">Total</td>
+                      <td className="p-1 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.omerDebt, 0).toFixed(2)}</td>
+                      <td className="p-1 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.egemenDebt, 0).toFixed(2)}</td>
+                      <td className="p-1 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.bayramDebt, 0).toFixed(2)}</td>
+                      <td className="p-1 text-center">€{weeklyDebts.reduce((sum, d) => sum + d.total, 0).toFixed(2)}</td>
                     </tr>
                   </tbody>
                 </table>
