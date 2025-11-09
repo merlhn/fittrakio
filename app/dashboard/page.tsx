@@ -295,9 +295,9 @@ export default function DashboardPage() {
                 <table className="w-full text-[10px] sm:text-xs min-w-[500px]">
                   <thead className="sticky top-0 bg-white z-10">
                     <tr className="border-b border-border">
-                      <th className="text-left p-2 font-semibold">Weeks</th>
-                      <th className="text-left p-2 font-semibold">Days</th>
-                      <th className="text-left p-2 font-semibold">Date</th>
+                      <th className="text-left px-1 py-2 font-semibold">Weeks</th>
+                      <th className="text-left px-1 py-2 font-semibold">Days</th>
+                      <th className="text-left px-1 py-2 font-semibold">Date</th>
                       {sortedUsers.map(user => (
                         <th key={user.id} className="text-center p-2 font-semibold text-center">
                           {user.name.split(' ')[0]}
@@ -343,12 +343,12 @@ export default function DashboardPage() {
                         rows.push(
                           <tr key={dateKey} className="border-b border-border hover:bg-vercel-gray/50">
                             {isFirstDayOfWeek && (
-                              <td rowSpan={weekRowSpan} className="p-2 font-medium text-center align-middle border-r border-border">
+                              <td rowSpan={weekRowSpan} className="px-1 py-2 font-medium text-center align-middle border-r border-border">
                                 {week}
                               </td>
                             )}
-                            <td className="p-2 font-medium text-center">{dayNum}</td>
-                            <td className="p-2 font-normal text-muted">{formatDate(day)}</td>
+                            <td className="px-1 py-2 font-medium text-center">{dayNum}</td>
+                            <td className="px-1 py-2 font-normal text-muted">{formatDate(day)}</td>
                             {sortedUsers.map(user => {
                               const isChecked = workoutsMap[user.id]?.[dateKey] === true
                               return (
@@ -370,7 +370,7 @@ export default function DashboardPage() {
                         if (monthEnd && monthlyWinner) {
                           rows.push(
                             <tr key={`winner-${monthKey}`} className="border-b border-border bg-vercel-gray">
-                              <td colSpan={3} className="p-2 font-semibold text-center">
+                              <td colSpan={3} className="px-1 py-2 font-semibold text-center">
                                 {monthlyWinner.month}/{monthlyWinner.year} Winner: {monthlyWinner.winner.split(' ')[0]} 🏆
                               </td>
                               <td colSpan={sortedUsers.length} className="p-2"></td>
