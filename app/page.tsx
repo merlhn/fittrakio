@@ -66,47 +66,6 @@ export default async function Home() {
           </div>
         </div>
 
-        {/* Our Story */}
-        <div className="mt-20 sm:mt-28 mb-20 sm:mb-28">
-          <div className="bg-gradient-to-br from-white to-vercel-gray border-2 border-border rounded-2xl p-10 sm:p-14 lg:p-20 vercel-card max-w-6xl mx-auto shadow-lg overflow-hidden">
-            <div className="text-center mb-10 sm:mb-14">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-black tracking-tight vercel-heading mb-6">
-                Our Story
-              </h2>
-              <div className="w-24 h-1 bg-black mx-auto"></div>
-            </div>
-
-            <div className="space-y-8 text-lg sm:text-xl text-muted leading-relaxed">
-              <p className="text-center">
-                Fittrakio was born from a simple idea shared by three university friends: <strong className="text-black text-xl">Ömer İlhan</strong>, <strong className="text-black text-xl">Egemen Başar</strong>, and <strong className="text-black text-xl">Bayram Çakır</strong>.
-              </p>
-              <p>
-                What started as a shared passion for fitness and the joy we found in working out together, quickly evolved into something more meaningful. We realized that staying consistent with our fitness goals was challenging, even when we loved what we were doing.
-              </p>
-              <p>
-                The solution? Create a system that combines accountability, friendly competition, and real rewards. We built Fittrakio to track our workouts, hold each other accountable, and celebrate our progress together.
-              </p>
-              <p>
-                Today, Fittrakio helps us stay motivated, track our fitness journey, and compete for monthly rewards—all while maintaining the spirit of friendship and shared commitment that brought us together in the first place.
-              </p>
-              
-              {/* Image */}
-              <div className="mt-10 sm:mt-12">
-                <div className="relative w-full h-96 sm:h-[500px] lg:h-[600px] rounded-xl overflow-hidden border-2 border-border shadow-lg bg-vercel-gray">
-                  <Image
-                    src="/our-story.jpg"
-                    alt="Ömer İlhan, Egemen Başar, and Bayram Çakır in Luxembourg Gardens, Paris"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Features */}
         <div className="mt-20 sm:mt-28">
           <div className="text-center mb-12 sm:mb-16">
@@ -310,6 +269,47 @@ export default async function Home() {
               >
                 Login
               </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Our Story */}
+        <div className="mt-20 sm:mt-28 mb-20 sm:mb-28">
+          <div className="bg-gradient-to-br from-white to-vercel-gray border-2 border-border rounded-2xl p-10 sm:p-14 lg:p-20 vercel-card max-w-6xl mx-auto shadow-lg overflow-hidden">
+            <div className="text-center mb-10 sm:mb-14">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-black tracking-tight vercel-heading mb-6">
+                Our Story
+              </h2>
+              <div className="w-24 h-1 bg-black mx-auto"></div>
+            </div>
+
+            <div className="space-y-8 text-lg sm:text-xl text-muted leading-relaxed">
+              <p className="text-center">
+                Fittrakio was born from a simple idea shared by three university friends: <strong className="text-black text-xl">Ömer İlhan</strong>, <strong className="text-black text-xl">Egemen Başar</strong>, and <strong className="text-black text-xl">Bayram Çakır</strong>.
+              </p>
+              <p>
+                What started as a shared passion for fitness and the joy we found in working out together, quickly evolved into something more meaningful. We realized that staying consistent with our fitness goals was challenging, even when we loved what we were doing.
+              </p>
+              <p>
+                The solution? Create a system that combines accountability, friendly competition, and real rewards. We built Fittrakio to track our workouts, hold each other accountable, and celebrate our progress together.
+              </p>
+              <p>
+                Today, Fittrakio helps us stay motivated, track our fitness journey, and compete for monthly rewards—all while maintaining the spirit of friendship and shared commitment that brought us together in the first place.
+              </p>
+              
+              {/* Image */}
+              <div className="mt-10 sm:mt-12">
+                <div className="relative w-full h-96 sm:h-[500px] lg:h-[600px] rounded-xl overflow-hidden border-2 border-border shadow-lg bg-vercel-gray">
+                  <Image
+                    src="/our-story.jpg"
+                    alt="Ömer İlhan, Egemen Başar, and Bayram Çakır in Luxembourg Gardens, Paris"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
