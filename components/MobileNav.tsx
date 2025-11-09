@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 interface MobileNavProps {
@@ -10,6 +10,18 @@ interface MobileNavProps {
 
 export default function MobileNav({ currentPath, onLogout }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false)
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   const navItems = [
     { href: '/dashboard', label: 'Main Dashboard' },
@@ -23,7 +35,7 @@ export default function MobileNav({ currentPath, onLogout }: MobileNavProps) {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden p-2 border border-border rounded-md hover:bg-vercel-gray transition-all duration-150"
+        className="lg:hidden p-2 border border-border rounded-md hover:bg-vercel-gray transition-all duration-150 z-50 relative"
         aria-label="Toggle menu"
       >
         <svg
@@ -46,23 +58,24 @@ export default function MobileNav({ currentPath, onLogout }: MobileNavProps) {
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <div
-          className="lg:hidden fixed inset-0 bg-black/50 z-50"
+          className="lg:hidden fixed inset-0 bg-black/50 z-[60]"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-full w-64 bg-white border-l border-border z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed top-0 right-0 h-full w-64 bg-white border-l border-border z-[70] transform transition-transform duration-300 ease-in-out shadow-2xl ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="p-6">
+        <div className="p-6 h-full overflow-y-auto">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-xl font-semibold">Menu</h2>
             <button
               onClick={() => setIsOpen(false)}
               className="p-2 hover:bg-vercel-gray rounded-md"
+              aria-label="Close menu"
             >
               <svg
                 className="w-5 h-5"
