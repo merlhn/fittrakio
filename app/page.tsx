@@ -32,15 +32,9 @@ export default async function Home() {
             <div className="flex items-center gap-3">
               <Link
                 href="/login"
-                className="px-4 py-2 border border-border rounded-md hover:bg-vercel-gray transition-all duration-150 font-medium text-sm vercel-button"
-              >
-                Login
-              </Link>
-              <Link
-                href="/register"
                 className="px-4 py-2 bg-black text-white rounded-md border border-black hover:bg-vercel-dark-gray transition-all duration-150 font-medium text-sm vercel-button vercel-button-primary"
               >
-                Sign Up
+                Login
               </Link>
             </div>
           </div>
@@ -62,18 +56,12 @@ export default async function Home() {
           <p className="text-xl sm:text-2xl text-muted max-w-3xl mx-auto mb-10 sm:mb-12 leading-relaxed">
             Stay accountable with your team. Track workouts, monitor progress, and compete for monthly rewards.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/register"
-              className="px-8 py-4 bg-black text-white rounded-lg border border-black hover:bg-vercel-dark-gray transition-all duration-150 font-semibold text-base vercel-button vercel-button-primary shadow-lg hover:shadow-xl"
-            >
-              Get Started
-            </Link>
+          <div className="flex justify-center">
             <Link
               href="/login"
-              className="px-8 py-4 border-2 border-border rounded-lg hover:bg-vercel-gray transition-all duration-150 font-semibold text-base vercel-button hover:border-black"
+              className="px-8 py-4 bg-black text-white rounded-lg border border-black hover:bg-vercel-dark-gray transition-all duration-150 font-semibold text-base vercel-button vercel-button-primary shadow-lg hover:shadow-xl"
             >
-              Sign In
+              Login
             </Link>
           </div>
         </div>
@@ -170,9 +158,9 @@ export default async function Home() {
               <div className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center text-xl font-semibold mb-4">
                 1
               </div>
-              <h3 className="text-lg font-semibold mb-3 vercel-heading">Sign Up</h3>
+              <h3 className="text-lg font-semibold mb-3 vercel-heading">Login</h3>
               <p className="text-muted text-sm">
-                Create your account with your name and email. Join your fitness team and get ready to track.
+                Login with your credentials to access your fitness tracking dashboard and start monitoring your progress.
               </p>
             </div>
 
@@ -315,18 +303,12 @@ export default async function Home() {
             <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
               Join Fittrakio and start your fitness journey today. Track your progress, compete with your team, and win monthly rewards.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/register"
-                className="inline-block px-10 py-4 bg-white text-black rounded-lg border-2 border-white hover:bg-vercel-gray hover:border-vercel-gray transition-all duration-150 font-semibold text-lg vercel-button shadow-lg hover:shadow-xl"
-              >
-                Sign Up Now
-              </Link>
+            <div className="flex justify-center">
               <Link
                 href="/login"
-                className="inline-block px-10 py-4 bg-transparent text-white rounded-lg border-2 border-white hover:bg-white/10 transition-all duration-150 font-semibold text-lg vercel-button"
+                className="inline-block px-10 py-4 bg-white text-black rounded-lg border-2 border-white hover:bg-vercel-gray hover:border-vercel-gray transition-all duration-150 font-semibold text-lg vercel-button shadow-lg hover:shadow-xl"
               >
-                Sign In
+                Login
               </Link>
             </div>
           </div>
