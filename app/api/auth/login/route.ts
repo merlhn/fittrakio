@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
 
     if (!email || !password) {
       return NextResponse.json(
-        { error: 'Email ve şifre zorunludur' },
+        { error: 'Email and password are required' },
         { status: 400 }
       )
     }
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Email veya şifre hatalı' },
+        { error: 'Email or password is incorrect' },
         { status: 401 }
       )
     }
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 
     if (!isValidPassword) {
       return NextResponse.json(
-        { error: 'Email veya şifre hatalı' },
+        { error: 'Email or password is incorrect' },
         { status: 401 }
       )
     }
@@ -55,10 +55,13 @@ export async function POST(request: NextRequest) {
         email: user.email,
       },
     })
-  } catch (error) {
+  } catch (error: any) {
     console.error('Login error:', error)
+    const errorMessage = process.env.NODE_ENV === 'development' 
+      ? error?.message || 'An error occurred during login'
+      : 'An error occurred during login'
     return NextResponse.json(
-      { error: 'Giriş sırasında bir hata oluştu' },
+      { error: errorMessage },
       { status: 500 }
     )
   }
