@@ -378,6 +378,13 @@ export default function PersonalPage() {
                     isToday ? 'bg-black text-white border-black' : 
                     dayWeekNumber === currentWeekNumber ? 'bg-vercel-gray/30' : 'hover:bg-vercel-gray'
                   }`}
+                  onClick={(e) => {
+                    // Don't trigger if clicking directly on checkbox (it has its own handler)
+                    if ((e.target as HTMLElement).tagName !== 'INPUT') {
+                      e.preventDefault()
+                      e.stopPropagation()
+                    }
+                  }}
                 >
                   {isFirstDayOfWeek && (
                     <div className="hidden sm:block absolute -left-24 top-1/2 -translate-y-1/2 text-xs font-medium text-muted whitespace-nowrap">
@@ -394,10 +401,16 @@ export default function PersonalPage() {
                       type="checkbox"
                       checked={displayChecked}
                       onChange={(e) => {
-                        console.log('Checkbox onChange triggered:', { dateKey, checked: e.target.checked })
+                        e.stopPropagation()
+                        console.log('Checkbox onChange triggered:', { dateKey, checked: e.target.checked, currentChecked: displayChecked })
                         handleWorkoutToggle(day, e.target.checked)
                       }}
-                      className="w-5 h-5 border border-current rounded cursor-pointer accent-current"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        console.log('Checkbox onClick triggered:', { dateKey })
+                      }}
+                      className="w-5 h-5 border border-current rounded cursor-pointer accent-current flex-shrink-0"
+                      style={{ cursor: 'pointer', zIndex: 10 }}
                     />
                     <div>
                       <div className={`font-medium text-base ${isToday ? 'text-white' : 'text-black'}`}>
