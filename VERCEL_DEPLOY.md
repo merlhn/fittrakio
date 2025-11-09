@@ -8,14 +8,18 @@
 
 ## Vercel'de Yapılacaklar
 
-### 1. Vercel Postgres Database Ekleme
+### 1. Vercel Postgres Database Ekleme ⚠️ ÖNEMLİ - BUILD ÖNCESİ YAPILMALI
 
-1. Vercel Dashboard'a gidin
-2. Projenizi seçin
-3. **Storage** sekmesine gidin
-4. **Create Database** → **Postgres** seçin
-5. Database'i oluşturun
-6. `DATABASE_URL` otomatik olarak environment variable olarak eklenecek
+1. Vercel Dashboard'a gidin: https://vercel.com/dashboard
+2. Projenizi seçin (fittrakio)
+3. **Storage** sekmesine gidin (sol menüde)
+4. **Create Database** butonuna tıklayın
+5. **Postgres** seçin
+6. Database adını girin (örn: `fittrakio-db`)
+7. Region seçin (en yakın bölgeyi seçin)
+8. **Create** butonuna tıklayın
+9. ⚠️ **ÖNEMLİ**: Database oluşturulduktan sonra `DATABASE_URL` otomatik olarak environment variable olarak eklenecek
+10. **Settings** → **Environment Variables** bölümünden `DATABASE_URL`'in eklendiğini kontrol edin
 
 ### 2. Environment Variables Ekleme
 
