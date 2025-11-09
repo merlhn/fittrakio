@@ -190,6 +190,17 @@ async function checkWeeklyMinimum(userId: number, date: Date) {
   const weekStart = weekDays[0]
   const weekEnd = weekDays[weekDays.length - 1]
 
+  // Check if the week has ended before calculating debt
+  const today = new Date()
+  today.setHours(23, 59, 59, 999) // End of today
+  const weekEndDate = new Date(weekEnd)
+  weekEndDate.setHours(23, 59, 59, 999) // End of week
+
+  // Only calculate debt if the week has ended
+  if (weekEndDate >= today) {
+    return // Week is still ongoing, don't calculate debt yet
+  }
+
   const workouts = await prisma.workout.findMany({
     where: {
       userId,
