@@ -57,14 +57,10 @@ export default function MobileNav({ currentPath, onLogout }: MobileNavProps) {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <>
-          <div
-            className="lg:hidden fixed inset-0 bg-black/50 z-[100]"
-            onClick={() => setIsOpen(false)}
-          />
-          {/* Prevent interaction with content behind menu */}
-          <div className="lg:hidden fixed inset-0 z-[105] pointer-events-none" />
-        </>
+        <div
+          className="lg:hidden fixed inset-0 bg-black/50 z-[100]"
+          onClick={() => setIsOpen(false)}
+        />
       )}
 
       {/* Mobile Menu */}
