@@ -107,7 +107,7 @@ export default function ActivityPage() {
               <Logo className="w-8 h-8 sm:w-10 sm:h-10 text-black flex-shrink-0" />
               <div className="min-w-0">
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black tracking-tight vercel-heading truncate">Fittrakio</h1>
-                <p className="text-xs sm:text-sm font-normal text-muted mt-1 hidden sm:block">Winning is not comfortable!</p>
+                <p className="text-xs sm:text-sm font-normal text-muted mt-1 truncate">{currentUser?.name}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
